@@ -1,0 +1,336 @@
+* {
+     box-sizing:border-box;
+     
+}
+
+/* Body design */
+body{
+     background:black;
+     margin:0;
+     min-height:100vh;
+     font-family: Arial, sans-serif;
+     color:white;
+     display:flex;
+     justify-content:center;
+     alighn-items:flex-start;
+     padding:40px 16px;
+     
+}
+
+/* Main Class Style */
+.todo-container{
+     width:100%;
+     max-width:500px;
+     background: navy;
+     padding:24px;
+     border-radius:16px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+}
+
+/* Top heading */
+h1 {
+     margin-top:0;
+     margin-bottom:8px;
+     font-size:20x;
+   
+}
+
+
+/* Description */
+.subtitle {
+     margin-bottom:24px;
+     color: #cbd5e1;
+}
+
+
+/* The input design */
+.task-form {
+     display: flex;
+     gap:10px;
+}
+
+/* The input box space */
+#task-input{
+     flex: 1;
+     min-width:0;
+     padding:12px;
+     font-size: 16px;
+     border: 1px solid #475569;
+     border-radius: 8px;
+     background: #0f172a;
+     color: white;
+}
+
+
+/* Button Style */
+.add-button {
+     padding:12px 14px;
+     border:none;
+     border-radius: 8px;
+     background: #38bdf8;
+     color: #082f49;
+     font-size: 15px;
+     font-weight: bold;
+     cursor: pointer;
+}
+
+
+.add-button:active {
+  transform: scale(0.97);
+}
+
+/* Our task message */
+#task-count {
+     color: #cbd5e1;
+     font-size:14;
+     margin-top: 20px;         
+}
+
+/* Task list styling */
+#task-list {
+     list-style: none;
+     padding:0;
+     margin:0;
+}
+
+
+/* Styling  the list Items*/
+#task-list li {
+  background: #334155;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #334155;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+#task-list li span {
+  flex: 1;
+  min-width: 100px;
+  overflow-wrap: anywhere;
+}
+
+.complete-button,
+.delete-button {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.complete-button {
+  background: #86efac;
+  color: #14532d;
+}
+
+.delete-button {
+  background: #fca5a5;
+  color: #7f1d1d;
+}
+
+#task-list li.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+
+.task-filters {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.filter-button {
+  flex: 1;
+  padding: 10px 6px;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  background: #334155;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-button.active {
+  background: #38bdf8;
+  color: #082f49;
+  border-color: #38bdf8;
+}
+
+
+#task-priority,
+#task-date {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  background: #0f172a;
+  color: white;
+  font-size: 14px;
+}
+
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#task-input {
+  flex: 1 1 100%;
+}
+
+#task-priority,
+#task-date {
+  flex: 1 1 40%;
+}
+
+.add-button {
+  flex: 1 1 100%;
+}
+
+.task-details {
+  display: block;
+  flex: 1 1 100%;
+  color: #cbd5e1;
+  font-size: 12px;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+
+
+.search-box {
+  margin: 12px 0;
+}
+
+#task-search {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  background: #0f172a;
+  color: white;
+  font-size: 16px;
+}
+
+#task-search:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+#task-search::placeholder {
+  color: #94a3b8;
+}
+
+.edit-button {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #c4b5fd;
+  color: #4c1d95;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* Black editing overlay */
+.edit-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.88);
+  overflow-y: auto;
+}
+
+.edit-modal[hidden] {
+  display: none;
+}
+
+.edit-panel {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+  border: 1px solid #333333;
+  border-radius: 16px;
+  background: #050505;
+  color: #ffffff;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+}
+
+.edit-panel h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.edit-panel label {
+  display: block;
+  margin: 14px 0 6px;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.edit-panel input,
+.edit-panel select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  background: #171717;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.edit-actions button {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 8px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#save-edit-button {
+  background: #38bdf8;
+  color: #082f49;
+}
+
+#cancel-edit-button {
+  background: #262626;
+  color: #ffffff;
+  border: 1px solid #404040;
+}
+
+@media (max-width: 360px) {
+  .edit-panel {
+    padding: 18px;
+  }
+
+  .edit-actions {
+    flex-direction: column;
+  }
+}
