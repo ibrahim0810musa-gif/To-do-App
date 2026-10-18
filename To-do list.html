@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Daily Tasks</title>
+
+  <link rel="stylesheet" href="To-do.css">
+</head>
+<body>
+  
+  <main class="todo-container">
+       
+       <h1>My To-Do List</h1>
+       <p class="subtitle">Plan your day, One task at a time. </p>
+       
+       
+       
+<div class="task-form">
+  <input type="text" id="task-input" placeholder="Enter a task...">
+
+  <select id="task-priority">
+    <option value="low">Low priority</option>
+    <option value="medium" selected>Medium priority</option>
+    <option value="high">High priority</option>
+  </select>
+
+  <input type="date" id="task-date" aria-label="Task due date">
+
+  <button class="add-button" id="add-button">Add Task</button>
+</div>
+         
+         
+  <p id="task-count">Your tasks will appear below.</p>
+
+<div class="search-box">
+  <input
+    type="search"
+    id="task-search"
+    placeholder="Search your tasks..."
+    aria-label="Search your tasks"
+  >
+</div>
+
+<div class="task-filters">
+  <button class="filter-button active" data-filter="all">
+    All
+  </button>
+
+  <button class="filter-button" data-filter="active">
+    Active
+  </button>
+
+  <button class="filter-button" data-filter="completed">
+    Completed
+  </button>
+</div>
+
+<ul id="task-list"></ul>
+       
+  </ul>
+  </main>
+  
+  
+<div id="edit-modal" class="edit-modal" hidden>
+  <div class="edit-panel">
+    <h2>Edit Task</h2>
+
+    <label for="edit-task-name">Task name</label>
+    <input type="text" id="edit-task-name" placeholder="Enter task name">
+
+    <label for="edit-task-priority">Priority</label>
+    <select id="edit-task-priority">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <label for="edit-task-date">Due date</label>
+    <input type="date" id="edit-task-date">
+
+    <div class="edit-actions">
+      <button id="save-edit-button" type="button">Save Changes</button>
+      <button id="cancel-edit-button" type="button">Cancel</button>
+    </div>
+  </div>
+</div>
+  <script src="To-do.js"></script>
+</body>
+</html>
